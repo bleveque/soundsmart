@@ -76,7 +76,9 @@ var Home = (function() {
 			r, i;
 		switch(part) {
 			case 'book':
-				ret = "<i>"+part+"</i>";
+				r = randInd(subject[part].length, alreadyPicked[part]);
+				alreadyPicked[part].push(r);
+				ret = "<i>"+subject[part][r];+"</i>";
 				break;
 			case 'hashtag':
 				ret = '';

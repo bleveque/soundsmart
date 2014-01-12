@@ -161,7 +161,7 @@ var Data = (function() {
 			'Did you see ||person|| ||verb:2|| at ||place|| last night? It was like ||person|| ||verb:2|| all over again.',
 			'Have you heard ||person||\'s opinion on ||noun||? It\'s pretty ||adj||.',
 			'I think ||event|| has gone downhill. I remember last year when ||person|| and ||person|| ||verb:1|| onstage. It was so ||adj||.',
-			'I can\'t believe what ||person|| said about ||noun||! ||person|| and ||person|| got so ||adj|| that they ||verb:1||.',
+			'I can\'t believe what ||person|| said about ||noun||! ||person|| and ||person|| were so ||emotion|| that they ||verb:1||.',
 			'Why are ||person|| and ||person|| dating?! How on earth do they ever ||verb:0|| together?',
 			'Have you heard that ||person|| is dating ||person||? I heard about it on TMZ when ||person|| tweeted it. \#||adj||',
 			'||person|| got so ||adj|| last night. ||hashtag||'
@@ -180,6 +180,13 @@ var Data = (function() {
 			['have a fight', 'had a fight', 'having a fight'],
 			['get caught on camera', 'got caught on camera', 'getting caught on camera'],
 			['sleep', 'slept', 'sleeping']
+		],
+		emotion: [
+			'sad',
+			'thrilled',
+			'angry',
+			'upset',
+			'mind-boggled'
 		],
 		adj: [
 			'dope',
@@ -316,7 +323,7 @@ var Data = (function() {
 
 	var english = {
 		structure: [
-			'If you only read ||author|| and ||author|| more often, you would understand how ||adj|| their writing is. You could clearly see their influence in ||book||.'
+			'If you only read ||author|| and ||author|| more often, you would understand how ||adj|| their writing is. You can clearly see their influence in ||book||.'
 		],
 		verb: [
 			['break the fourth wall', 'broke the fourth wall', 'breaking the fourth wall'],
@@ -355,7 +362,8 @@ var Data = (function() {
 			'Given ||person||\'s method of ||verb:2|| a ||adj|| ||noun||, the result is trivial.',
 			'The ||adj|| ||noun|| is ||relation|| to each ||noun|| in a ||adj|| ||noun||.',
 			'I just read a paper of ||person||\'s that has a good description of the ||adj|| ||theorem||.',
-			'According to the ||theorem||, ||noun||s are equivalent to ||noun||s when the ||adj|| ||noun|| is ||adj||.'
+			'According to the ||theorem||, ||noun||s are equivalent to ||noun||s when the ||adj|| ||noun|| is ||adj||.',
+			'The ||theorem||, independently proven by ||person|| and ||person||, opens up the field of ||adj|| ||noun||s.'
 		],
 		verb: [
 			['bisect', 'bisected', 'bisecting'],
@@ -436,6 +444,7 @@ var Data = (function() {
 
 	return {
 		foodandbeverage: foodandbeverage,
+		chemistry: chemistry,
 		economics: economics,
 		english: english,
 		geology: geology,
