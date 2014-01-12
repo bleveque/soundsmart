@@ -1,7 +1,151 @@
 var Data = (function() {
 
-	var starwars = {
+	var opera = {
+		structure: [
+			'This recording of ||show|| is passable, but I prefer ||singer||\'s ||adj|| interpretation of ||show||.',
+			'The second act of ||show|| showcases ||singer||\'s ability to ||verb:0|| ||adv||.',
+			'||composer|| was most known for his ||adj|| style, but his use of ||noun|| is just as intriguing.'
+		],
+		verb: [
+			['sing', 'sang', 'singing'],
+			['die', 'died', 'dying'],
+			['marry', 'marrying', 'married'],
+			['fall in love', 'fell in love', 'falling in love']
+		],
+		adv: [
+			'tragically',
+			'convincingly',
+			'melodramatically',
+			'powerfully',
+			'comically',
+			'jealously',
+			'secretly'
+		],
+		adj: [
+			'cantabile',
+			'bel canto',
+			'buffa',
+			'seria',
+			'vibratto',
+			'classical',
+			'tragic',
+			'comic',
+			'alluring',
+			'deceitful',
+			'devious'
+		],
+		noun: [
+			'recitative',
+			'leitmotif',
+			'aria',
+			'coloratura',
+			'intermezzo',
+			'divertissement',
+			'divas',
+			'castrati'
+		],
+		composer: [
+			'Verdi',
+			'Mozart',
+			'Strauss',
+			'Gershwin',
+			'Monteverdi',
+			'Rossini',
+			'Bizet'
+		],
+		singer: [
+			'Joan Sutherland',
+			'Luciano Pavarotti',
+			'Maria Callas',
+			'Leontyne Price',
+			'Greer Grimsley',
+			'Jos&#233; Carreras'
+		],
+		show: [
+			'The Marriage of Figaro',
+			'Carmen',
+			'The Barber of Seville',
+			'Rigoletto',
+			'The Magic Flute',
+			'Norma',
+			'Salome',
+			'Das Rheingold',
+			'Paggliacci'
+		]
+	}
 
+	var starwars = {
+		structure: [
+			'||title|| would have been way better if ||person|| had used the ||adj|| ||noun|| (instead of the ||adj|| ||noun||) to fight ||person|| on ||place||.',
+			'If ||person|| went to ||place||, why didn\'t ||person|| ||verb:0|| with ||person||?'
+		],
+		verb: [
+			['bring balance to the force', 'brought balance to the force', 'bringing balance to the force'],
+			['duel', 'dueled', 'dueling'],
+			['battle', 'battled', 'battling'],
+			['rebel', 'rebelled', 'rebelling'],
+			['force-push', 'force-pushed', 'force-pushing'],
+			['explode', 'exploded', 'exploding']
+		],
+		adj: [
+			'galactic',
+			'imperial',
+			'',
+			'star',
+			'land',
+			'sith',
+			'ray'
+		],
+		noun: [
+			'lightsaber',
+			'blaster',
+			'protocol droid',
+			'pod racer',
+			'tie fighter',
+			'X-wing',
+			'star destroyer',
+			'padawan',
+			'droid',
+			'rebel'
+		],
+		person: [
+			'Watto',
+			'the Rancor',
+			'the Sarlacc',
+			'Luke',
+			'Leia',
+			'Han Solo',
+			'Chewbacca',
+			'Greedo',
+			'Kit Fisto',
+			'Sebulba',
+			'Anakin',
+			'Darth Vader',
+			'Emperor Palpatine',
+			'Hayden Christensen',
+			'Ki Adi Mundi',
+			'Mace Windu',
+			'Boba Fett',
+			'Jango Fett',
+			'Jabba the Hutt',
+			'Lando Calrissian',
+			'Bib Fortuna'
+		],
+		place: [
+			'Coruscant',
+			'Tatooine',
+			'Kashyyyk',
+			'Hoth',
+			'Dagobah'
+		],
+		title: [
+			'The Phantom Menace',
+			'The Attack of the Clones',
+			'The Revenge of the Sith',
+			'A New Hope',
+			'The Empire Strikes Back',
+			'The Return of the Jedi'
+		]
 	};
 
 	var foodandbeverage = {
@@ -51,7 +195,6 @@ var Data = (function() {
 			'granache',
 			'bordeaux',
 			'chardonnay',
-			'pinot gris',
 			'sauvignon blanc',
 			'pinot grigio',
 			'barollo',
@@ -286,9 +429,7 @@ var Data = (function() {
 		],
 		verb: [
 			['polymerize', 'polymerized', 'polymerizing'],
-			['precipitate', 'precipitated', 'precipitating'],
-			//['turns pink', 'turned pink', 'turning pink'],
-			//['fall on the table and shatter', 'fell on the table and shattered', 'falling on the table and shattering']
+			['precipitate', 'precipitated', 'precipitating']
 		],
 		apparatus: [
 			'bunsen burner',
@@ -443,12 +584,14 @@ var Data = (function() {
 	var economics, english, geology;
 
 	return {
-		foodandbeverage: foodandbeverage,
 		chemistry: chemistry,
 		economics: economics,
 		english: english,
+		foodandbeverage: foodandbeverage,
 		geology: geology,
 		math: math,
+		opera: opera,
+		starwars: starwars,
 		topical: topical
 	};
 })();
