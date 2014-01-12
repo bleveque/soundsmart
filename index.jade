@@ -1,6 +1,7 @@
 doctype html
 html
 	head
+		link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica:400italic,400")
 		link(rel="stylesheet", href="css/home.css")
 		script(src="js/jquery.js")
 		script(src="js/data.js")
@@ -8,14 +9,18 @@ html
 	body
 		#background
 			#contentWrapper
-				#topBar
 				#content
+					#title
+						i The Pretentious Partygoer
+					#subtitle Impress friends, family, and colleagues with well-informed musings on a variety of disciplines.
+					br
 					select#subject
-						// option(name='economics') economics
 						option(name='chemistry') chemistry
 						option(name='foodandbeverage', selected='selected') food and beverage
 						option(name='english') english
 						option(name='math') math
 						option(name='topical') topical
 					button#generateButton Get sentence
+					br
+					br
 					#sentence
