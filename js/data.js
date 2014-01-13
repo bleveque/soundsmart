@@ -3,8 +3,9 @@ var Data = (function() {
 	var opera = {
 		structure: [
 			'This recording of ||show|| is passable, but I prefer ||singer||\'s ||adj|| interpretation of ||show||.',
-			'The second act of ||show|| showcases ||singer||\'s ability to ||verb:0|| ||adv||.',
-			'||composer|| was most known for his ||adj|| style, but his use of ||noun|| is just as intriguing.'
+			'The second act of ||show|| showcases ||singer|| as a ||adv|| ||adj|| ||role||.',
+			'||composer|| was most known for his ||adj|| style, but his use of ||noun|| is just as intriguing.',
+			'Act three could have used more ||adj|| ||role||s ||verb:2|| ||adv|| in the ||set||.'
 		],
 		verb: [
 			['sing', 'sang', 'singing'],
@@ -32,16 +33,18 @@ var Data = (function() {
 			'comic',
 			'alluring',
 			'deceitful',
-			'devious'
+			'devious',
+			'backstabbing'
 		],
 		noun: [
+			'tremolo',
+			'crescendo',
 			'recitative',
 			'leitmotif',
 			'aria',
 			'coloratura',
 			'intermezzo',
 			'divertissement',
-			'divas',
 			'castrati'
 		],
 		composer: [
@@ -53,13 +56,44 @@ var Data = (function() {
 			'Rossini',
 			'Bizet'
 		],
+		role: [
+			'diva',
+			'soprano',
+			'castrato',
+			'tenor',
+			'baritone',
+			'mezzo-soprano',
+			'alto',
+			'peasant',
+			'courtier',
+			'prince',
+			'prostitute',
+			'king',
+			'queen',
+			'dwarf',
+			'god',
+			'assassin',
+			'jester',
+			'clown',
+			'bacchant'
+		],
+		set: [
+			'castle',
+			'river',
+			'forest',
+			'prison',
+			'dungeon',
+			'palace',
+			'back alley'
+		],
 		singer: [
 			'Joan Sutherland',
 			'Luciano Pavarotti',
 			'Maria Callas',
 			'Leontyne Price',
 			'Greer Grimsley',
-			'Jos&#233; Carreras'
+			'Jos&#233; Carreras',
+			'Arthur Woodsley'
 		],
 		show: [
 			'The Marriage of Figaro',
@@ -77,7 +111,7 @@ var Data = (function() {
 	var starwars = {
 		structure: [
 			'||title|| would have been way better if ||person|| had used the ||adj|| ||noun|| (instead of the ||adj|| ||noun||) to fight ||person|| on ||place||.',
-			'If ||person|| went to ||place||, why didn\'t ||person|| ||verb:0|| with ||person||?'
+			'When ||person|| went to ||place||, why didn\'t ||person|| ||verb:0|| with ||person||?'
 		],
 		verb: [
 			['bring balance to the force', 'brought balance to the force', 'bringing balance to the force'],
@@ -90,7 +124,6 @@ var Data = (function() {
 		adj: [
 			'galactic',
 			'imperial',
-			'',
 			'star',
 			'land',
 			'sith',

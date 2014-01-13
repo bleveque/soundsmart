@@ -2,8 +2,8 @@ var Home = (function() {
 
 	window.onload = load;
 
-	var currSubject = 'chemistry',
-		currText = 'Chemistry';
+	localStorage.ppSubject = localStorage.ppSubject || 'chemistry',
+	localStorage.ppText = localStorage.ppText || 'Chemistry';
 
 	/**
 	 * @param subject    the appropriate Data object
@@ -34,7 +34,7 @@ var Home = (function() {
 			$('#subjectOptions').css('display', 'block');
 			$('body').on('click', function() {
 				$('body').off('click');
-				optionClicked(null, null, currText, currSubject);
+				optionClicked(null, null, localStorage.ppText, localStorage.ppSubject);
 			});
 		});
 
@@ -44,19 +44,19 @@ var Home = (function() {
 	function optionClicked(evt, elt, text, subj) {
 		elt = elt || this;
 		evt && evt.stopPropagation();
-		currText = text || $(elt).text();
+		localStorage.ppText = text || $(elt).text();
 		$('#currentSubject').css('display', 'block');
-		$('#currentSubject').text(currText);
-		currSubject = (subj || $(elt).attr('value') || $(elt).text()).replace(/ /g, '').toLowerCase();
+		$('#currentSubject').text(localStorage.ppText);
+		localStorage.ppSubject = (subj || $(elt).attr('value') || $(elt).text()).replace(/ /g, '').toLowerCase();
 		$('#subjectOptions').css('display','none');
 	}
 
 	function defaultOption() {
-		optionClicked(null, $('.subjectOption')[0]);
+		optionClicked(null, null, localStorage.ppText, localStorage.ppSubject);
 	}
 
 	function pullAndGenerate() {
-		$('#sentence').html(generateSentence(Data[currSubject]));
+		$('#sentence').html(generateSentence(Data[localStorage.ppSubject]));
 	}
 
 	function load() {
