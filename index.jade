@@ -11,18 +11,22 @@ html
 			#contentWrapper
 				#content
 					#title
-						i The Pretentious Partygoer
+						// i The Pretentious Partygoer
 					#subtitle Impress friends, family, and colleagues with well-informed musings on a variety of disciplines.
 					br
-					select#subject
-						option(name='chemistry') chemistry
-						option(name='foodandbeverage', selected='selected') food and beverage
-						option(name='english') english
-						option(name='math') math
-						option(name='opera') opera
-						option(name='starwars') star wars
-						option(name='topical') topical
-					button#generateButton Get sentence
+					span.subjectSentence Generate a new &nbsp
+					#subjectSelect
+						#currentSubject
+						#subjectOptions
+							.subjectOption(value='chemistry') Chemistry
+							.subjectOption(value='foodandbeverage') Food and Beverage
+							.subjectOption(value='english') English
+							.subjectOption(value='math') Math
+							.subjectOption(value='opera') Opera
+							.subjectOption(value='starwars') Star Wars
+							.subjectOption(value='topical') Topical
+					span.subjectSentence &nbsp sentence.
+					button#generateButton Go.
 					br
 					br
 					#sentence

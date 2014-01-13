@@ -2,6 +2,9 @@ var Home = (function() {
 
 	window.onload = load;
 
+	var currSubject = 'chemistry',
+		currText = 'Chemistry';
+
 	/**
 	 * @param subject    the appropriate Data object
 	 */
@@ -24,16 +27,41 @@ var Home = (function() {
 		$('#generateButton').on('click', function() {
 			pullAndGenerate();
 		});
+
+		$('#subjectSelect').on('click', function(evt) {
+			evt.stopPropagation();
+			$('#currentSubject').css('display', 'none');
+			$('#subjectOptions').css('display', 'block');
+			$('body').on('click', function() {
+				$('body').off('click');
+				optionClicked(null, null, currText, currSubject);
+			});
+		});
+
+		$('.subjectOption').on('click', optionClicked);
+	}
+
+	function optionClicked(evt, elt, text, subj) {
+		elt = elt || this;
+		evt && evt.stopPropagation();
+		currText = text || $(elt).text();
+		$('#currentSubject').css('display', 'block');
+		$('#currentSubject').text(currText);
+		currSubject = (subj || $(elt).attr('value') || $(elt).text()).replace(/ /g, '').toLowerCase();
+		$('#subjectOptions').css('display','none');
+	}
+
+	function defaultOption() {
+		optionClicked(null, $('.subjectOption')[0]);
 	}
 
 	function pullAndGenerate() {
-		var subject = $('#subject').attr('value');
-		subject = subject.replace(/ /g, '').toLowerCase();
-		$('#sentence').html(generateSentence(Data[subject]));
+		$('#sentence').html(generateSentence(Data[currSubject]));
 	}
 
 	function load() {
 		initHandlers();
+		defaultOption();
 		pullAndGenerate();
 	}
 
@@ -97,7 +125,6 @@ var Home = (function() {
 					r = randInd(cat.length - 1);
 					cat = cat[r];
 					word = (typeof cat === 'string') ? cat : cat[2];
-					// debugger;
 					ret += " #"+word.replace(/ /g,'').toLowerCase();
 				}
 				break;

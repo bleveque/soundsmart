@@ -11,18 +11,23 @@
     <div id="background">
       <div id="contentWrapper">
         <div id="content">
-          <div id="title"><i>The Pretentious Partygoer</i></div>
-          <div id="subtitle">Impress friends, family, and colleagues with well-informed musings on a variety of disciplines.</div><br>
-          <select id="subject">
-            <option name="chemistry">chemistry</option>
-            <option name="foodandbeverage" selected="selected">food and beverage</option>
-            <option name="english">english</option>
-            <option name="math">math</option>
-            <option name="opera">opera</option>
-            <option name="starwars">star wars</option>
-            <option name="topical">topical</option>
-          </select>
-          <button id="generateButton">Get sentence</button><br><br>
+          <div id="title">
+            <!-- i The Pretentious Partygoer-->
+          </div>
+          <div id="subtitle">Impress friends, family, and colleagues with well-informed musings on a variety of disciplines.</div><br><span class="subjectSentence">Generate a new &nbsp</span>
+          <div id="subjectSelect">
+            <div id="currentSubject"></div>
+            <div id="subjectOptions">
+              <div value="chemistry" class="subjectOption">Chemistry</div>
+              <div value="foodandbeverage" class="subjectOption">Food and Beverage</div>
+              <div value="english" class="subjectOption">English</div>
+              <div value="math" class="subjectOption">Math</div>
+              <div value="opera" class="subjectOption">Opera</div>
+              <div value="starwars" class="subjectOption">Star Wars</div>
+              <div value="topical" class="subjectOption">Topical</div>
+            </div>
+          </div><span class="subjectSentence">&nbsp sentence.</span>
+          <button id="generateButton">Go.</button><br><br>
           <div id="sentence"></div>
         </div>
       </div>
