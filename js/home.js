@@ -8,9 +8,10 @@ var Home = (function() {
 	/**
 	 * @param subject    the appropriate Data object
 	 */
-	function generateSentence(subject) {
+	function generateSentence() {
 		var structure,
-			i, r;
+			i, r,
+			subject = Data[localStorage.ppSubject];
 		r = randInd(subject.structure.length);
 		structure = subject.structure[r];
 		var regex = /\|\|/;
@@ -27,6 +28,18 @@ var Home = (function() {
 		$('#generateButton').on('click', function() {
 			pullAndGenerate();
 		});
+
+		$('body').on('mouseup', function(evt) {
+			if(evt.which === 13) {
+				generateSentence();
+			}
+		});
+
+		// avoids issue with #content overflowing #background, but also stops content from moving vertically...
+		// $(window).on('scroll', function() {
+		// 	var h = $('#background').height();
+		// 	$('#background').css('height', Math.max(h, 2 * $('#content').offset().top + $('#content').height()));
+		// });
 
 		$('#subjectSelect').on('click', function(evt) {
 			evt.stopPropagation();
@@ -56,7 +69,16 @@ var Home = (function() {
 	}
 
 	function pullAndGenerate() {
-		$('#sentence').html(generateSentence(Data[localStorage.ppSubject]));
+		$('#sentence').html(generateSentence());
+	}
+
+	function fbIntegrate() {
+		var js,
+			fjs = $('script')[0];
+		if($('#facebook-jssdk').length > 0){
+			return;
+		}
+
 	}
 
 	function load() {
@@ -104,6 +126,7 @@ var Home = (function() {
 			r, i;
 		switch(part) {
 			case 'book':
+			case 'piece':
 			case 'show':
 				r = randInd(subject[part].length, alreadyPicked[part]);
 				alreadyPicked[part].push(r);

@@ -614,10 +614,206 @@ var Data = (function() {
 		]
 	}
 
+	var computerscience = {
+		structure: [
+			'If your program isn\'t ||verb:3||, I would recommend ||verb:3|| a ||noun|| in ||language||.',
+			'If you have the ||noun|| for it, you should upgrade to a non-||verb:3|| ||adj|| ||noun||. It has a ||number||-||size||||unit|| ||adj|| ||noun||.',
+			'I used to use ||language||, but now I use a custom ||framework||-inspired ||language|| framework.',
+			'There\'s a ||adj|| ||noun|| in ||place|| working at ||number|| ||size||||unit||s. Nobody knows how to ||verb:0|| it.'
+		],
+		verb: [
+			['segfault', 'segfaults', 'segfaulted', 'segfaulting'],
+			['breach', 'breaches', 'breached', 'breaching'],
+			['compile', 'compiles', 'compiled', 'compiling'],
+			['respond', 'responds', 'responded', 'responding'],
+			['hack', 'hacks', 'hacked', 'hacking'],
+			['fork', 'forks', 'forked', 'forking'],
+		],
+		place: [
+			'Norway',
+			'Nevada',
+			'China'
+		],
+		noun: [
+			'router',
+			'modem',
+			'node',
+			'motherboard',
+			'mainframe',
+			'server',
+			'network',
+			'tower',
+			'thread',
+			'process',
+			'bytecode',
+			'machine language'
+		],
+		error: [
+			'segfault',
+			'crash'
+		],
+		number: [
+			'256',
+			'495',
+			'783',
+			'122',
+			'8'
+		],
+		language: [
+			'Markdown',
+			'Visual Basic',
+			'Pyret',
+			'JSON',
+			'Java',
+			'HTML',
+			'CSS',
+			'Python',
+			'Scheme',
+			'Cython',
+			'Clojure',
+			'Racket',
+			'Scala',
+			'Ruby',
+			'MySQL',
+			'Git'
+		],
+		framework: [
+			'Rails',
+			'Django',
+			'Node',
+			'Spring'
+		],
+		adj: [
+			'titanium',
+			'unknown',
+			'interpreted',
+			'compiled',
+			'parallel',
+			'quad-core',
+			'finite',
+			'pure',
+			'Turing-complete',
+			'NP-hard',
+			'deterministic',
+			'non-deterministic',
+			'initial',
+			'permutable',
+			'intrinsic'
+		],
+		size: [
+			'mega',
+			'giga',
+			'tera',
+			'peda',
+			'milli',
+			'centi',
+			'kilo'
+		],
+		unit: [
+			'flop',
+			'byte',
+			'bit',
+			'hertz'
+		],
+		company: [
+			'Microsoft',
+			'Oracle',
+			'Apple'
+		]
+	}
+
+	var arthistory = {
+
+		structure: [
+			'||artist||\'s ||interpretation|| of ||piece|| ||verb:1|| a ||noun|| when viewed from the perspective of early ||movement||.',
+			'I went to the ||artist|| show at ||museum||, and I experienced a ||adj|| impression of ||noun|| that just wasn\'t there in ||timeperiod||.'
+		],
+		interpretation: [
+			'rendition',
+			'depiction',
+			'interpretation',
+			'forgery'
+		],
+		technique: [
+			
+		],
+		medium: [
+
+		],
+		verb: [
+			['symbolize', 'symbolizes', 'symbolized', 'symbolizing'],
+			['oppress', 'oppresses', 'oppressed', 'oppressing'],
+			['represent', 'represents', 'represented', 'representing']
+		],
+		museum: [
+			'the Louvre',
+			'MOMA',
+			'the Frye'
+		],
+		modifier: [
+			'light wash'
+		],
+		timeperiod: [
+			'the late 15th Century',
+			'the early Reformation',
+			'the Renaissance',
+			'the mid-50s'
+		],
+		adv: [
+
+		],
+		noun: [
+			'flying buttress',
+			'canvas',
+			'hidden meaning',
+			'hierarchy of scale',
+			'perspective',
+			'foreshortening',
+			'foil painting',
+			'young woman',
+			'golden light',
+			'God',
+			'the lower class'
+		],
+		adj: [
+			'baroque',
+			'neo-classical',
+			'naturalistic',
+			'delicate',
+			'idealistic'
+		],
+		movement: [
+			'pop art',
+			'impressionism',
+			'realism',
+			'surrealism',
+			'cubism',
+			'dadaism'
+		],
+		piece: [
+			'Perseus and Medusa',
+			'the Mona Lisa'
+		],
+		artist: [
+			'Cellini',
+			'Bernini',
+			'Giambologna',
+			'Vermeer',
+			'Caravaggio',
+			'da Vinci',
+			'Michelangelo',
+			'Raphael',
+			'Titian',
+			'Andy Warhol'
+		]
+	}
+
 	var economics, english, geology;
 
 	return {
+		arthistory: arthistory,
 		chemistry: chemistry,
+		computerscience: computerscience,
 		economics: economics,
 		english: english,
 		foodandbeverage: foodandbeverage,
