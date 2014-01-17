@@ -29,24 +29,32 @@ var Home = (function() {
 			pullAndGenerate();
 		});
 
-		$('body').on('mouseup', function(evt) {
+		$('body').on('keyup', function(evt) {
 			if(evt.which === 13) {
-				generateSentence();
+				pullAndGenerate();
 			}
 		});
 
+		$('body').on('click.pull', function() {
+			pullAndGenerate();
+		});
+
+		$('#twitterContainer').on('mousedown', function() {
+			$('#tweet').attr('data-text', $('#sentence').text());
+		});
+
 		// avoids issue with #content overflowing #background, but also stops content from moving vertically...
-		// $(window).on('scroll', function() {
-		// 	var h = $('#background').height();
-		// 	$('#background').css('height', Math.max(h, 2 * $('#content').offset().top + $('#content').height()));
-		// });
+		$(window).on('scroll', function() {
+			var h = $('#background').height();
+			$('#background').css('height', Math.max(h, 2 * $('#content').offset().top + $('#content').height()));
+		});
 
 		$('#subjectSelect').on('click', function(evt) {
 			evt.stopPropagation();
 			$('#currentSubject').css('display', 'none');
 			$('#subjectOptions').css('display', 'block');
-			$('body').on('click', function() {
-				$('body').off('click');
+			$('body').on('click.select', function() {
+				$('body').off('click.select');
 				optionClicked(null, null, localStorage.ppText, localStorage.ppSubject);
 			});
 		});
@@ -62,6 +70,9 @@ var Home = (function() {
 		$('#currentSubject').text(localStorage.ppText);
 		localStorage.ppSubject = (subj || $(elt).attr('value') || $(elt).text()).replace(/ /g, '').toLowerCase();
 		$('#subjectOptions').css('display','none');
+
+		$('#smartalec').attr('src', 'images/smartalec' + localStorage.ppSubject + '.png');
+		pullAndGenerate();
 	}
 
 	function defaultOption() {
@@ -73,18 +84,40 @@ var Home = (function() {
 	}
 
 	function fbIntegrate() {
-		var js,
-			fjs = $('script')[0];
-		if($('#facebook-jssdk').length > 0){
-			return;
-		}
+		(function(d,s,id) {
+			var js,
+				fjs = d.getElementsByTagName(s)[0];
+			if(d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	}
 
+	function twitterIntegrate() {
+		(function(d,s,id) {
+			console.log('hi');
+			var js,
+				fjs = d.getElementsByTagName(s)[0],
+				p=/^http:/.test(d.location)?'http':'https';
+			if(!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id=id;
+				js.src=p+'://platform.twitter.com/widgets.js';
+				fjs.parentNode.insertBefore(js,fjs);
+			}
+		}(document, 'script', 'twitter-wjs'));
 	}
 
 	function load() {
 		initHandlers();
 		defaultOption();
 		pullAndGenerate();
+		fbIntegrate();
+		twitterIntegrate();
 	}
 
 	function parseStructure(subject, structure, timesThrough) {

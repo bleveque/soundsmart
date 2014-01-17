@@ -3,15 +3,18 @@ var Data = (function() {
 	var opera = {
 		structure: [
 			'This recording of ||show|| is passable, but I prefer ||singer||\'s ||adj|| interpretation of ||show||.',
-			'The second act of ||show|| showcases ||singer|| as a ||adv|| ||adj|| ||role||.',
-			'||composer|| was most known for his ||adj|| style, but his use of ||noun|| is just as intriguing.',
-			'Act three could have used more ||adj|| ||role||s ||verb:2|| ||adv|| in the ||set||.'
+			'The second act of ||show|| ||adv|| showcases ||singer|| as a ||adv|| ||adj|| ||role||.',
+			'||composer|| was most known for his ||adj|| style, but his use of ||adj|| ||songtype|| is just as intriguing.',
+			'Act three could have used more ||adj|| ||role||s ||verb:2|| ||adv|| in the ||set||.',
+			'The premiere of ||show|| suffered from ||adj|| ||voiceartifact|| on the part of several ||person||s.'
 		],
 		verb: [
 			['sing', 'sang', 'singing'],
 			['die', 'died', 'dying'],
 			['marry', 'marrying', 'married'],
-			['fall in love', 'fell in love', 'falling in love']
+			['fall in love', 'fell in love', 'falling in love'],
+			['stab', 'stabbed', 'stabbing'],
+			['usurp', 'usurped', 'usurping']
 		],
 		adv: [
 			'tragically',
@@ -20,32 +23,59 @@ var Data = (function() {
 			'powerfully',
 			'comically',
 			'jealously',
-			'secretly'
+			'secretly',
+			'unknowingly'
 		],
 		adj: [
-			'cantabile',
 			'bel canto',
 			'buffa',
 			'seria',
-			'vibratto',
 			'classical',
 			'tragic',
 			'comic',
 			'alluring',
 			'deceitful',
 			'devious',
-			'backstabbing'
-		],
-		noun: [
-			'tremolo',
-			'crescendo',
-			'recitative',
-			'leitmotif',
-			'aria',
+			'backstabbing',
+			'heroic',
+			'cantabile',
 			'coloratura',
+			'da capo',
+			'secco',
+			'singspiel',
+			'strophic'
+		],
+		voiceartifact: [
+			'vibratto',
+			'tremolo',
+			'coloratura',
+			'flatness',
+			'atonality',
+			'sweetness'
+		],
+		person: [
+			'alto',
+			'soprano',
+			'baritone',
+			'mezzo-soprano',
+			'composer',
+			'conductor',
+			'librettist',
+			'castrato',
+			'contralto',
+			'diva'
+		],
+		songtype: [
+			'overture',
+			'finale',
+			'recitative',
+			'leitmotiv',
+			'aria',
 			'intermezzo',
 			'divertissement',
-			'castrati'
+			'cadenza',
+			'cavatina',
+			'duet'
 		],
 		composer: [
 			'Verdi',
@@ -54,16 +84,12 @@ var Data = (function() {
 			'Gershwin',
 			'Monteverdi',
 			'Rossini',
-			'Bizet'
+			'Bizet',
+			'Wagner',
+			'Bartok',
+			'Meyerbeer'
 		],
 		role: [
-			'diva',
-			'soprano',
-			'castrato',
-			'tenor',
-			'baritone',
-			'mezzo-soprano',
-			'alto',
 			'peasant',
 			'courtier',
 			'prince',
@@ -84,7 +110,8 @@ var Data = (function() {
 			'prison',
 			'dungeon',
 			'palace',
-			'back alley'
+			'back alley',
+			'grotto'
 		],
 		singer: [
 			'Joan Sutherland',
@@ -104,44 +131,58 @@ var Data = (function() {
 			'Norma',
 			'Salome',
 			'Das Rheingold',
-			'Paggliacci'
+			'Paggliacci',
+			'Erwartung',
+			'Bluebeard\'s Castle',
+			'The Pearl Fishers',
+			'Aida',
+			'Daughter of the Regiment',
+			'Madame Butterfly',
+			'Atys'
 		]
-	}
+	};
 
 	var starwars = {
 		structure: [
-			'||title|| would have been way better if ||person|| had used the ||adj|| ||noun|| (instead of the ||adj|| ||noun||) to fight ||person|| on ||place||.',
-			'When ||person|| went to ||place||, why didn\'t ||person|| ||verb:0|| with ||person||?'
+			'||title|| would have been way better if ||person|| had ||verb:1|| using only ||noun:1||.',
+			'When ||person|| went to ||place||, why didn\'t ||person|| ||verb:0|| with ||person||?',
+			'Don\'t you just love when ||person|| ||verb:1|| while riding ||noun:1|| in ||title||?',
+			'Overall, I prefer ||title||, but the ||verb:2|| scene in ||title|| gets me every time.',
+			'||person|| all the way.',
+			'Every time I watch ||title||, I can\'t believe how ||adj|| the ||noun:2|| are.'
 		],
 		verb: [
 			['bring balance to the force', 'brought balance to the force', 'bringing balance to the force'],
 			['duel', 'dueled', 'dueling'],
 			['battle', 'battled', 'battling'],
 			['rebel', 'rebelled', 'rebelling'],
-			['force-push', 'force-pushed', 'force-pushing'],
-			['explode', 'exploded', 'exploding']
+			['force-push', 'force-pushed', 'force-pushing']
 		],
 		adj: [
 			'galactic',
 			'imperial',
-			'star',
-			'land',
-			'sith',
-			'ray'
+			'evil',
+			'naive',
+			'wrinkled',
+			'reinforced',
+			'shielded',
+			'greedy',
+			'hokey'
 		],
 		noun: [
-			'lightsaber',
-			'blaster',
-			'protocol droid',
-			'pod racer',
-			'tie fighter',
-			'X-wing',
-			'star destroyer',
-			'padawan',
-			'droid',
-			'rebel'
+			['lightsaber', 'a lightsaber', 'lightsabers'],
+			['blaster', 'a blaster', 'blasters'],
+			['protocol droid', 'a protocol droid', 'protocol droids'],
+			['pod racer', 'a pod racer', 'pod racers'],
+			['tie fighter', 'a tie fighter', 'tie fighters'],
+			['X-wing', 'an X-wing', 'X-wings'],
+			['star destroyer', 'a star destroyer', 'star destroyers'],
+			['tauntaun', 'a tauntaun', 'tauntauns']
 		],
 		person: [
+			'padawans',
+			'rebels',
+			'droids',
 			'Watto',
 			'the Rancor',
 			'the Sarlacc',
@@ -177,7 +218,8 @@ var Data = (function() {
 			'The Revenge of the Sith',
 			'A New Hope',
 			'The Empire Strikes Back',
-			'The Return of the Jedi'
+			'The Return of the Jedi',
+			'The Christmas Special'
 		]
 	};
 
@@ -223,7 +265,7 @@ var Data = (function() {
 			'juicy'
 		],
 		wine: [
-			'cab',
+			'cabernet',
 			'pinot',
 			'granache',
 			'bordeaux',
@@ -353,7 +395,7 @@ var Data = (function() {
 			['hobbit', 'hobbited', 'hobbiting'],
 			['LARP', 'LARPed', 'LARPing'],
 			['cosplay', 'cosplayed', 'cosplaying'],
-			['have a fight', 'had a fight', 'having a fight'],
+			['get in a fight', 'got in a fight', 'getting in a fight'],
 			['get caught on camera', 'got caught on camera', 'getting caught on camera'],
 			['sleep', 'slept', 'sleeping']
 		],
@@ -392,7 +434,6 @@ var Data = (function() {
 			'JaVale McGee',
 			'Snoop Lion',
 			'Tom Cruise',
-			'Snoopzilla',
 			'Two Chainz',
 			'Chief Keef',
 			'Kanye West',
@@ -405,7 +446,7 @@ var Data = (function() {
 			'Hillary Clinton',
 			'Joss Whedon',
 			'Michael Bay',
-			'Dwayne \"The Rock\" Johnson',
+			'Dwayne &#8220;The Rock\" Johnson',
 			'Kim Jong Un'
 		],
 		event: [
@@ -612,7 +653,7 @@ var Data = (function() {
 			'Fermat\'s Little Theorem',
 			'ABC conjecture'
 		]
-	}
+	};
 
 	var computerscience = {
 		structure: [
@@ -713,14 +754,14 @@ var Data = (function() {
 			'flop',
 			'byte',
 			'bit',
-			'hertz'
+			'cycle'
 		],
 		company: [
 			'Microsoft',
 			'Oracle',
 			'Apple'
 		]
-	}
+	};
 
 	var arthistory = {
 
@@ -806,18 +847,41 @@ var Data = (function() {
 			'Titian',
 			'Andy Warhol'
 		]
-	}
+	};
 
-	var economics, english, geology;
+	var earthscience = {
+		structure: [
+			'If you wait ||number|| years, a ||adj|| ||noun|| should form here.'
+		],
+		number: [
+			'200 billion',
+			'195 million',
+			'12'
+		],
+		verb: [
+
+		],
+		adj: [
+			'redox-sensitive'
+		],
+		noun: [
+			'biological pump',
+			'strike slip fault',
+			'advection',
+			'fractionation'
+		]
+	};
+
+	var economics, english;
 
 	return {
 		arthistory: arthistory,
 		chemistry: chemistry,
 		computerscience: computerscience,
+		earthscience: earthscience,
 		economics: economics,
 		english: english,
 		foodandbeverage: foodandbeverage,
-		geology: geology,
 		math: math,
 		opera: opera,
 		starwars: starwars,

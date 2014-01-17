@@ -3,25 +3,17 @@ html
 	head
 		link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica:400italic,400")
 		link(rel="stylesheet", href="css/home.css")
+		link(rel='icon', type='image/png', href='images/favicon.png')
 		script(src="js/jquery.js")
 		script(src="js/data.js")
 		script(src="js/home.js")
 
 		script(src="//connect.facebook.net/en_US/all.js#xfbml=1")
+
+	title Sound Smart
+
 	body
 		#fb-root
-		script.
-			(function(d,s,id) {
-				var js,
-					fjs = d.getElementsByTagName(s)[0];
-				if(d.getElementById(id)) {
-					return;
-				}
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
 		#background
 			#contentWrapper
 				#content
@@ -36,8 +28,9 @@ html
 							.subjectOption(value='arthistory') Art History
 							.subjectOption(value='chemistry') Chemistry
 							.subjectOption(value='computerscience') Computer Science
-							.subjectOption(value='foodandbeverage') Food and Beverage
+							.subjectOption(value='earthscience') Earth Science
 							.subjectOption(value='english') English
+							.subjectOption(value='foodandbeverage') Food and Beverage
 							.subjectOption(value='math') Math
 							.subjectOption(value='opera') Opera
 							.subjectOption(value='starwars') Star Wars
@@ -51,4 +44,10 @@ html
 						img#smartalec(src='images/smartalec.png')
 					br
 					br
-					.fb-like(data-href="http://soundsmart.me/", data-width="100", data-layout="standard", data-action="like", data-show-faces="true", data-share="true")
+					br
+					#facebookContainer
+						.fb-like(data-href="http://soundsmart.me/", data-width="100", data-layout="standard", data-action="like", data-show-faces="false", data-share="true")
+					#twitterContainer
+						a#tweet.twitter-share-button(href="https://twitter.com/share", data-url="http://soundsmart.me", data-hashtags="soundsmart") Tweet
+					br
+					br

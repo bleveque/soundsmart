@@ -3,26 +3,15 @@
   <head>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica:400italic,400">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <script src="js/jquery.js"></script>
     <script src="js/data.js"></script>
     <script src="js/home.js"></script>
     <script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
   </head>
+  <title>Sound Smart</title>
   <body>
     <div id="fb-root"></div>
-    <script>
-      (function(d,s,id) {
-       var js,
-        fjs = d.getElementsByTagName(s)[0];
-       if(d.getElementById(id)) {
-        return;
-       }
-       js = d.createElement(s);
-       js.id = id;
-       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-       fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
     <div id="background">
       <div id="contentWrapper">
         <div id="content">
@@ -34,8 +23,9 @@
               <div value="arthistory" class="subjectOption">Art History</div>
               <div value="chemistry" class="subjectOption">Chemistry</div>
               <div value="computerscience" class="subjectOption">Computer Science</div>
-              <div value="foodandbeverage" class="subjectOption">Food and Beverage</div>
+              <div value="earthscience" class="subjectOption">Earth Science</div>
               <div value="english" class="subjectOption">English</div>
+              <div value="foodandbeverage" class="subjectOption">Food and Beverage</div>
               <div value="math" class="subjectOption">Math</div>
               <div value="opera" class="subjectOption">Opera</div>
               <div value="starwars" class="subjectOption">Star Wars</div>
@@ -44,8 +34,11 @@
           </div><span class="subjectSentence">&nbsp sentence.</span>
           <button id="generateButton">Go.</button><br><br>
           <div id="sentence"></div>
-          <div id="smartalecContainer"><img id="smartalec" src="images/smartalec.png"></div><br><br>
-          <div data-href="http://soundsmart.me/" data-width="100" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" class="fb-like"></div>
+          <div id="smartalecContainer"><img id="smartalec" src="images/smartalec.png"></div><br><br><br>
+          <div id="facebookContainer">
+            <div data-href="http://soundsmart.me/" data-width="100" data-layout="standard" data-action="like" data-show-faces="false" data-share="true" class="fb-like"></div>
+          </div>
+          <div id="twitterContainer"><a id="tweet" href="https://twitter.com/share" data-url="http://soundsmart.me" data-hashtags="soundsmart" class="twitter-share-button">Tweet</a></div><br><br>
         </div>
       </div>
     </div>
