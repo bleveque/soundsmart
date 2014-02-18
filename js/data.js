@@ -1,5 +1,4 @@
 var Data = (function() {
-
 	var opera = {
 		structure: [
 			'This recording of ||show|| is passable, but I prefer ||singer||\'s ||adj|| interpretation of ||show||.',

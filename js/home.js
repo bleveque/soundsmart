@@ -5,6 +5,8 @@ var Home = (function() {
 	localStorage.ppSubject = localStorage.ppSubject || 'chemistry',
 	localStorage.ppText = localStorage.ppText || 'Chemistry';
 
+	var recurring = {};
+
 	/**
 	 * @param subject    the appropriate Data object
 	 */
@@ -21,6 +23,7 @@ var Home = (function() {
 			timesThrough++;
 		}
 		structure = structure.charAt(0).toUpperCase() + structure.substring(1,structure.length);
+		recurring = {};
 		return structure;
 	}
 
@@ -33,10 +36,6 @@ var Home = (function() {
 			if(evt.which === 13) {
 				pullAndGenerate();
 			}
-		});
-
-		$('body').on('click.pull', function() {
-			pullAndGenerate();
 		});
 
 		$('#twitterContainer').on('mousedown', function() {
@@ -54,7 +53,6 @@ var Home = (function() {
 			$('#currentSubject').css('display', 'none');
 			$('#subjectOptions').css('display', 'block');
 			$('body').on('click.select', function() {
-				$('body').off('click.select');
 				optionClicked(null, null, localStorage.ppText, localStorage.ppSubject);
 			});
 		});
@@ -70,9 +68,9 @@ var Home = (function() {
 		$('#currentSubject').text(localStorage.ppText);
 		localStorage.ppSubject = (subj || $(elt).attr('value') || $(elt).text()).replace(/ /g, '').toLowerCase();
 		$('#subjectOptions').css('display','none');
-
 		$('#smartalec').attr('src', 'images/smartalec' + localStorage.ppSubject + '.png');
 		pullAndGenerate();
+		$('body').off('click.select');
 	}
 
 	function defaultOption() {
@@ -80,7 +78,7 @@ var Home = (function() {
 	}
 
 	function pullAndGenerate() {
-		$('#sentence').html(generateSentence());
+		$('#sentence').html(generateSentence().replace(/\n/g,'<br />'));
 	}
 
 	function fbIntegrate() {
@@ -156,16 +154,19 @@ var Home = (function() {
 	function specialBehaviors(part, subject, alreadyPicked) {
 		var ret = false,
 			cat, word,
-			r, i;
+			tempAlreadyPicked,
+			r, i, s;
 		switch(part) {
 			case 'book':
 			case 'piece':
 			case 'show':
+				// italicize
 				r = randInd(subject[part].length, alreadyPicked[part]);
 				alreadyPicked[part].push(r);
 				ret = "<i>"+subject[part][r]+"</i>";
 				break;
 			case 'hashtag':
+				// add some number <= 5 of hashtags
 				ret = '';
 				r = randInd(5) + 1;
 				cats = [];
@@ -182,6 +183,41 @@ var Home = (function() {
 					cat = cat[r];
 					word = (typeof cat === 'string') ? cat : cat[2];
 					ret += " #"+word.replace(/ /g,'').toLowerCase();
+				}
+				break;
+			case 'job_background':
+				// add some number <= 3 of competencies
+				// don't add to already picked -- can repeat
+				ret = ''
+				tempAlreadyPicked = [];
+				r = randInd(3) + 1;
+				if(r==1) {
+					ret = subject[part][randInd(subject[part].length)];
+				} else {
+					for(i=0;i<r;i++) {
+						if(i === r-1){
+							ret += 'and ';
+						}
+						s = randInd(subject[part].length, tempAlreadyPicked);
+						tempAlreadyPicked.push(s);
+						ret += subject[part][s];
+						if(i < r-1) {
+							ret += (r===2) ? ' ' : ', ';
+						}
+					}
+				}
+				
+				break;
+			case 'job_position':
+			case 'job_company':
+				// stick with one for the entire statement
+				if(recurring[part]) {
+					ret = recurring[part];
+				} else {
+					r = randInd(subject[part].length, alreadyPicked[part]);
+					alreadyPicked[part].push(r);
+					ret = subject[part][r];
+					recurring[part] = ret;
 				}
 				break;
 			default:
