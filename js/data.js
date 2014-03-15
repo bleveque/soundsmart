@@ -1,4 +1,24 @@
 var Data = (function() {
+	var credits = {
+		structure: [
+			'Dude, I heard this project wouldn\'t have been possible without ||contrib|| and ||contrib||.',
+			'||contrib|| and ||contrib|| put the team on their back for this site.',
+			'I can\'t believe ||contrib|| and ||contrib|| weren\'t nominated for more awards for their work on Sound Smart.',
+			'I\'d like to thank my parents, my middle school track coach, and ||contrib|| for all they have done to make this possible.',
+			'When ||contrib||, ||contrib||, and ||contrib|| met, it was a true meeting of the minds. The result was Sound Smart.',
+			'Put your hands together for.......||contrib||!',
+			'Never before has the field of meta academia seen the likes of ||contrib|| and ||contrib||.'
+		],
+		contrib: [
+			'Alec Cole',
+			'Liam Elberty',
+			'AloraLee Gates',
+			'Ben Hoffman',
+			'Ben LeVeque',
+			'Frankie Pavia',
+			'Max Rogers'
+		]
+	}
 	var opera = {
 		structure: [
 			'This recording of ||show|| is passable, but I prefer ||singer||\'s ||adj|| interpretation of ||show||.',
@@ -379,7 +399,7 @@ var Data = (function() {
 			'Have you heard ||person||\'s opinion on ||noun||? It\'s pretty ||adj||.',
 			'I think ||event|| has gone downhill. I remember last year when ||person|| and ||person|| ||verb:1|| onstage. It was so ||adj||.',
 			'I can\'t believe what ||person|| said about ||noun||! ||person|| and ||person|| were so ||emotion|| that they ||verb:1||.',
-			'Why are ||person|| and ||person|| dating?! How on earth do they ever ||verb:0|| together?',
+			'Why are ||person|| and ||person|| dating?! Do they just ||verb:0|| every day?',
 			'Have you heard that ||person|| is dating ||person||? I heard about it on TMZ when ||person|| tweeted it. \#||adj||',
 			'||person|| got so ||adj|| last night. ||hashtag||'
 		],
@@ -537,7 +557,8 @@ var Data = (function() {
 
 	var english = {
 		structure: [
-			'If you only read ||author|| and ||author|| more often, you would understand how ||adj|| their writing is. You can clearly see their influence in ||book||.'
+			'If you only read ||author|| and ||author|| more often, you would understand how ||adj|| their writing is. You can clearly see their influence in ||book||.',
+			''
 		],
 		verb: [
 			['break the fourth wall', 'broke the fourth wall', 'breaking the fourth wall'],
@@ -568,6 +589,83 @@ var Data = (function() {
 			'Howl',
 			'Paradise Lost',
 			'Wild Animus'
+		]
+	};
+
+	var philosophy = {
+		structure: [
+			'Though both views are prima facie compelling, one cannot hold both ||adj|| ||noun|| and ||adj|| ||noun||.',
+			'Until you consider ||noun||, you cannot truly understand the motivation behind ||adj|| ||noun||.',
+			'It sounds like you have forgotten the ||adj|| distinction between ||dist|| and ||dist||!!',
+			'I remember my days as an undergraduate, staying up late in my dorm room and arguing about ||noun|| and ||dist||.\
+			 I can\'t believe I was a ||adj|| back then!'
+		],
+		adj: [
+			'Kripkian',
+			'Aristotilian',
+			'Platonic',
+			'Socratic',
+			'Nietzsche-esque',
+			'Kantian',
+			'Quinian',
+			'Humean',
+			'deontic',
+			'scholastic',
+			'pedantic',
+			'Cartesian',
+			'Marxist',
+			'holistic',
+			'Hegelian',
+			'Derrida-inspired',
+			'Parmenidean'
+		],
+		noun: [
+			'metaphysics',
+			'virtue theory',
+			'two dimensionalism',
+			'semantic nihilism',
+			'relativism',
+			'epistemology',
+			'paradigm shifts',
+			'consequentialism',
+			'internalism',
+			'externalism',
+			'existentialism',
+			'predeterminism',
+			'idealism',
+			'non-physicalism',
+			'numina',
+			'compatiblism',
+			'aesthetics',
+			'hedonism',
+			'S5 modal logic',
+			'rationalism',
+			'causal theory of denotation',
+			'historicism',
+			'phenomenology',
+			'hermeneutics',
+			'post-structuralism'
+		],
+		dist: [
+			'de re',
+			'de dicto',
+			'internalism',
+			'externalism',
+			'metaphysics',
+			'epistemology',
+			'syntax',
+			'semantics',
+			'induction',
+			'deduction',
+			'abduction',
+			'a priori',
+			'a posteriori',
+			'necessary',
+			'contingent',
+			'possible worlds',
+			'impossible worlds',
+			'abstract objects',
+			'physical objects'
 		]
 	};
 
@@ -659,45 +757,65 @@ var Data = (function() {
 			'If your program isn\'t ||verb:3||, I would recommend ||verb:3|| a ||noun|| in ||language||.',
 			'If you have the ||noun|| for it, you should upgrade to a non-||verb:3|| ||adj|| ||noun||. It has a ||number||-||size||||unit|| ||adj|| ||noun||.',
 			'I used to use ||language||, but now I use a custom ||framework||-inspired ||language|| framework.',
-			'There\'s a ||adj|| ||noun|| in ||place|| working at ||number|| ||size||||unit||s. Nobody knows how to ||verb:0|| it.'
+			'There\'s a ||adj|| ||noun|| in ||place|| working at ||number|| ||size||||unit||s. Nobody knows how to ||verb:0|| it.',
+			'I think ||concept|| is a step in the right direction, taking into account the cost of a ||verb:2|| ||noun||.',
+			'||company|| tried ||concept||, but it was never as commercially viable as ||company||\'s ||concept||.',
+			'Why isn\'t anybody using ||adj|| ||noun||s?',
+			'I work for ||startup_name||. We mostly work on ||concept|| in ||language||, but I\'m trying to push us towards ||language||.'
 		],
 		verb: [
 			['segfault', 'segfaults', 'segfaulted', 'segfaulting'],
 			['breach', 'breaches', 'breached', 'breaching'],
 			['compile', 'compiles', 'compiled', 'compiling'],
-			['respond', 'responds', 'responded', 'responding'],
+			['dump', 'dumps', 'dumped', 'dumping'],
 			['hack', 'hacks', 'hacked', 'hacking'],
-			['fork', 'forks', 'forked', 'forking'],
+			['fork', 'forks', 'forked', 'forking']
 		],
 		place: [
 			'Norway',
 			'Nevada',
-			'China'
+			'China',
+			'India',
+			'Los Alamos'
+		],
+		concept: [
+			'paravirtualization',
+			'homomorphic encryption',
+			'nested virtualization',
+			'ARP spoofing',
+			'virtual memory'
 		],
 		noun: [
 			'router',
 			'modem',
-			'node',
 			'motherboard',
 			'mainframe',
 			'server',
 			'network',
-			'tower',
 			'thread',
 			'process',
 			'bytecode',
-			'machine language'
+			'machine language',
+			'render farm',
+			'network hub',
+			'chip',
+			'database',
+			'page table',
+			'packet sniffer'
 		],
 		error: [
 			'segfault',
-			'crash'
+			'crash',
+			'404',
+			'page fault'
 		],
 		number: [
 			'256',
 			'495',
 			'783',
 			'122',
-			'8'
+			'8',
+			'2048'
 		],
 		language: [
 			'Markdown',
@@ -715,7 +833,12 @@ var Data = (function() {
 			'Scala',
 			'Ruby',
 			'MySQL',
-			'Git'
+			'Git',
+			'IronPython',
+			'Assembly',
+			'TypeScript',
+			'Fortran',
+			'Erlang'
 		],
 		framework: [
 			'Rails',
@@ -738,7 +861,15 @@ var Data = (function() {
 			'non-deterministic',
 			'initial',
 			'permutable',
-			'intrinsic'
+			'intrinsic',
+			'redundant',
+			'Bayesian',
+			'virtual',
+			'abstract',
+			'static',
+			'non-blocking',
+			'nosql',
+			'multithreaded'
 		],
 		size: [
 			'mega',
@@ -758,7 +889,10 @@ var Data = (function() {
 		company: [
 			'Microsoft',
 			'Oracle',
-			'Apple'
+			'Apple',
+			'Mongo',
+			'BitTitan',
+			'Intel'
 		]
 	};
 
@@ -850,28 +984,57 @@ var Data = (function() {
 
 	var earthscience = {
 		structure: [
-			'If you wait ||number|| years, a ||adj|| ||noun|| should form here.'
+			'If you wait ||number|| years, ||adj|| ||noun:1|| should ||verb:0|| here.',
+			'To a good first approximation, these ||noun:1|| could be modelled as ||adj|| ||noun:1||.',
+			'Imagine ||number|| years ago. Where we stand now, ||noun:0|| was ||verb:2|| ||noun:0||.'
 		],
 		number: [
 			'200 billion',
 			'195 million',
-			'12'
+			'12',
+			'a few (geologically speaking)',
+			'42,000',
+			'900 billion',
+			'365 million'
 		],
 		verb: [
-
+			['form', 'formed', 'forming'],
+			['erode', 'eroded', 'eroding'],
+			['subduct', 'subducted', 'subducting'],
+			['undergo', 'underwent', 'undergoing'],
+			['erupt', 'erupted', 'erupting'],
+			['stabilize', 'stabilized', 'stabilizing'],
+			['scour', 'scoured', 'scouring']
 		],
 		adj: [
-			'redox-sensitive'
+			'redox-sensitive',
+			'subglacial',
+			'benthic',
+			'igneous',
+			'alluvial',
+			'aeolian',
+			'tectonic',
+			'dormant',
+			'paleolithic'
 		],
 		noun: [
-			'biological pump',
-			'strike slip fault',
-			'advection',
-			'fractionation'
+			['a biological pump', 'biological pumps'],
+			['a strike slip fault', 'strike slip faults'],
+			['an advection', 'advections'],
+			['a fractionation', 'fractionations'],
+			['basalt', 'basalt'],
+			['a peat core', 'peat cores'],
+			['a cataclysm', 'cataclysms'],
+			['detritus', 'detritus'],
+			['an orogeny', 'orogenies'],
+			['a chasm', 'chasms'],
+			['a regolith', 'regoliths'],
+			['a jokulhlaup', 'jokulhlaups'],
+			['a dinosaur bone', 'dinosaur bones']
 		]
 	};
 
-	var economics, english;
+	var economics;
 
 	return {
 		arthistory: arthistory,
@@ -883,7 +1046,9 @@ var Data = (function() {
 		foodandbeverage: foodandbeverage,
 		math: math,
 		opera: opera,
+		philosophy: philosophy,
 		starwars: starwars,
-		topical: topical
+		topical: topical,
+		credits: credits
 	};
 })();

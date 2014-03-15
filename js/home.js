@@ -28,6 +28,7 @@ var Home = (function() {
 	}
 
 	function initHandlers() {
+
 		$('#generateButton').on('click', function() {
 			pullAndGenerate();
 		});
@@ -151,11 +152,19 @@ var Home = (function() {
 		return pieces.join('');
 	}
 
+	function reverseString(str) {
+		return str.split('').reverse().join('');
+	}
+
+	function capitalize(str) {
+		return str[0].toUpperCase() + str.slice(1);
+	}
+
 	function specialBehaviors(part, subject, alreadyPicked) {
 		var ret = false,
 			cat, word,
 			tempAlreadyPicked,
-			r, i, s;
+			r, i, s, matches;
 		switch(part) {
 			case 'book':
 			case 'piece':
@@ -164,6 +173,10 @@ var Home = (function() {
 				r = randInd(subject[part].length, alreadyPicked[part]);
 				alreadyPicked[part].push(r);
 				ret = "<i>"+subject[part][r]+"</i>";
+				break;
+			case 'startup_name':
+				r = randInd(subject.noun.length, []);
+				ret = capitalize(reverseString(reverseString(subject.noun[r]).replace(/[aeiou]/,'')));
 				break;
 			case 'hashtag':
 				// add some number <= 5 of hashtags
